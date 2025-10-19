@@ -10,6 +10,7 @@ Most of the homework assignments are here, but homework **solutions** are on Can
 - [HW5](APPM4600_Fall25_HW05.pdf) due Fri Sep 26 at midnight on Gradescope. Topics: contraction mapping theorem, sparse matrices, linear algebra and least-squares review.
 - [HW6](APPM4600_Fall25_HW06.pdf) due Fri Oct 3 at midnight on Gradescope. Topics: multivariate contraction mapping theorem ,Newton's and Broyden's methods, linear algebra review.
 - [HW7](APPM4600_Fall25_HW07.pdf) due Fri Oct 17 at midnight on Gradescope. Topics: optimization and least-squares, Gauss-Newton, steepest descent, interpolation, curve-fitting
+- [HW8](APPM4600_Fall25_HW08.pdf) due Fri Oct 24 at midnight on Gradescope. Topics: interpolation and spline error bounds
 
 ## FAQ
 What should HW submissions look like?  If it involves code and/or plots, see our [submission_guidelines](submission_guidelines.md)
