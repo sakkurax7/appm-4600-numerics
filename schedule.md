@@ -194,10 +194,7 @@ References are to Burden and Faires, 10th edition, unless otherwise noted
 
 - Mon, Nov 3 
   - Finish [Intro to quadrature](Notes/Ch4_quadrature_intro.pdf)
-    - Demo: [Ch4_integration.ipynb](Demos/Ch4_integration.ipynb)
   - [Newton Cotes formula](Notes/Ch4_quadrature_NewtonCotes.pdf) from ch 4.3
-  - [Composite quadrature](Notes/Ch4_quadrature_composite.pdf) from ch 4.4
-    - Demo: [Ch4_CompositeIntegration.ipynb](Demos/Ch4_CompositeIntegration.ipynb)
   - If we have time:
     - ~~[Romberg integration](Notes/Ch4_RombergIntegrationEulerMacLaurin.pdf) from ch 4.5~~
     - ~~Demo: [Ch4_RombergIntegration.ipynb](Demos/Ch4_RombergIntegration.ipynb)~~
@@ -205,15 +202,19 @@ References are to Burden and Faires, 10th edition, unless otherwise noted
   - In-class review
   - [Review_2025_Midterm2.pdf](Notes/Review_2025_Midterm2.pdf)
   - Evening **midterm exam**, 6 to 7:30 PM, ECCS 1B12
-- Thu, Nov 6, Lab 11
-  - TBD, perhaps simple quadrature (using numpy's builtin tools), compared to symbolic (sympy/mathematica), compared to [chebfun](https://www.chebfun.org/) which has the aim to "feel symbolic but run at the speed of numerics"
-  - TBD, maybe on adaptive integration
+- Thu, Nov 6, No lab
+  - Skipping lab since it's an exam week 
 - Fri, Nov 7 
-  - Debrief from lab
+  - Finish Newton cotes
+  - Demo: [Ch4_integration.ipynb](Demos/Ch4_integration.ipynb)
+    - Looked at [Tai's method](https://en.wikipedia.org/wiki/Tai%27s_model) which reinvented the trapezoidal rule
+
+#### Week 13, Chapter 6 (direct methods for linear algebra)
+- Mon, Nov 10
+  - [Composite quadrature](Notes/Ch4_quadrature_composite.pdf) from ch 4.4
+    - Demo: [Ch4_CompositeIntegration.ipynb](Demos/Ch4_CompositeIntegration.ipynb)
   - [Adaptive integration](Notes/Ch4_AdaptiveIntegration.pdf) from ch 4.6
     -  Demo: [Ch4_AdaptiveIntegration.ipynb](Demos/Ch4_AdaptiveIntegration.ipynb)
-#### Week 13, Chapter 6 (direct methods for linear algebra)
-- Mon, Nov 10 
   - [Gaussian quadrature](Notes/Ch4_GaussianQuadrature.pdf) from ch 4.7 and also from the Driscoll and Braun supplementary text
     - Demo: [Ch4_GaussianQuadrature.ipynb](Demos/Ch4_GaussianQuadrature.ipynb)
   - Further resources on Gaussian quadrature:
@@ -232,7 +233,8 @@ References are to Burden and Faires, 10th edition, unless otherwise noted
   - Demo: [Ch6_MatrixMultiplication.ipynb](Demos/Ch6_MatrixMultiplication.ipynb), talk about BLAS and LAPACK
   - In chapter 6, we're roughly covering the material from the book, but adding more (conditioning, more details on LAPACK/BLAS), and doing it in a different order; we're also moving fast, since APPM 3310 "Matrix Methods" is a prereq for this class and these topics were covered in that class
 - Thu, Nov 13, Lab 12
-  - TBD
+  - TBD, perhaps simple quadrature (using numpy's builtin tools), compared to symbolic (sympy/mathematica), compared to [chebfun](https://www.chebfun.org/) which has the aim to "feel symbolic but run at the speed of numerics"
+  - TBD, maybe on adaptive integration
 - Fri, Nov 14 
   - Debrief from lab
   - [LU factorization](Notes/Ch6_LUfactorization.pdf)
