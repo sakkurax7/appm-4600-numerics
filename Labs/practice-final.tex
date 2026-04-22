@@ -1,0 +1,108 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{APPM 4600 Numerical Analysis \\ Practice Final }
+\date{\today}
+\author{Charles Igel}
+
+\begin{document}
+\maketitle
+
+\section*{Problem 1: Short Answer}
+
+\textbf{(a)} 
+Gaussian quadrature is most often used for integrating polynomials, but for periodic functions on $[-\pi, \pi]$, rules like the trapezoidal rule do very well due to periodicity. Gaussian quadrature doesn't necessarily do better here.
+
+\textbf{(b)} 
+Not necessarily, consider $\alpha \hat{I}_n + \beta \hat{J}_n = (\alpha + 3\beta) I + O(1/n^2)$. Without knowing the constants, it's not necessarily possible to cancel the error, so we can't guaruntee an improvement.
+
+\textbf{(c)} 
+No, gradient descent is no guaruntted to find global minima, it generally is going to converge to a local minimum or saddle point. The convergence itself is dependent on properties like convexity and step size.
+\textbf{(d)} 
+Newton's method converges quadratically near the solution but requires computing and inverting the Jacobian which is very expensive. Fixed-point iteration is simpler but converges slowly and may fail if the contractive condition isn't met. 
+
+\section*{Problem 2: Computational Complexity}
+
+\begin{itemize}
+\item Matrix-vector multiply: $O(n^2)$
+\item Solve $Ax=b$ (general): $O(n^3)$
+\item Solve triangular system: $O(n^2)$
+\item Solve with orthogonal $A$: $O(n^2)$
+\item Barycentric formula setup: $O(n^2)$
+\item Compute spline: $O(n)$ for computing the tridiagonal system
+\end{itemize}
+
+\section*{Problem 3}
+
+\textbf{(a)} 
+Apply Simpson;s rule here:
+$$ \hat{I} = \frac 1 3 \left[ f(-1) + 4f(0) + f(1) \right]. $$
+
+
+\textbf{(b)} 
+They are wrong. We cannot pull $f'''(\xi(x))$ out of the integral as it is a function of $x$. If $\xi$ was not a function of $x$ we could do this.
+
+\section*{Problem 4}
+
+Evaluating near $x\approx 2\pi$ is less accurate due to subtractive cancellation in this area. Near $x=0$, the function is computed more accurately due to it's smooth behavior.
+
+\section*{Problem 5}
+
+\textbf{(a)} 
+Use the Lagrange interpolating polynomial
+$$ p(x) = f(-d) \frac{x-d}{-2d} + f(d) \frac{x+d}{2d}.$$
+\textbf{(b)} 
+Using the Lagrange remainder theorem
+$$f(x) - p(x) = \frac{f''(\xi)}{2} (x+d)(x-d).$$
+for a $\xi$ in the domain that maximizes the magnitude of the derivative.
+\textbf{(c)} 
+Maximize $|(x+d)(x-d)| = |x^2 - d^2|$ over $[-1,1]$. We see that the largest is at $x=\pm 1$, giving $|1-d^2|$. Minimizing this gives $d=1$.
+\textbf{(d)} 
+From (b), and the trapezoidal rule error we have
+\[
+\left|\int_{-1}^1 (f(x)-p(x))dx\right| \le \frac{M}{12}(2)^3 = \frac{2M}{3}.
+\]
+
+\section*{Problem 6}
+
+\textbf{(a)} 
+Formula $J$ is Gaussian quadrature with degree of exactness 3.  
+Formula $K$ is trapezoidal rule with degree of exactness 1.
+
+\textbf{(b)} 
+Choose $J$ because its error depends on $f''''$, which is small, while $K$ depends on $f''$, which is large.
+
+\section*{Problem 7}
+
+\textbf{(a)} 
+Solve $Ax=b$:
+\[
+\begin{bmatrix}2 & -1 \\ -1 & 2\end{bmatrix}
+\begin{bmatrix}x_1 \\ x_2\end{bmatrix}
+=
+\begin{bmatrix}3 \\ -3\end{bmatrix}.
+\]
+Solving:
+\[
+2x_1 - x_2 = 3,\quad -x_1 + 2x_2 = -3.
+\]
+From first: $x_2 = 2x_1 - 3$. Substitute:
+\[
+-x_1 + 2(2x_1 - 3) = -3 \Rightarrow 3x_1 = 3 \Rightarrow x_1=1, \; x_2=-1.
+\]
+Unique since $A$ is invertible ($\det A = 4 + 1 = 5 \ne 0$)
+
+\textbf{(b)} 
+Iteration converges if the spectral radius $\rho(I - \eta A) < 1$. Sicne the eigenvalues of $A$ are $1,3$ we require:
+\[
+|1-\eta \lambda| < 1 \Rightarrow 0 < \eta < \frac{2}{3}.
+\]
+
+\section*{Problem 8}
+
+$f(x)=|x|$ has a corner, so the Fuorier coefficients decay like $O(1/k^2)$.  
+$g(x)=(x+1)^2$ is smooth, so the coefficients decay  exponentially or faster than any power. Thus $g$ decays faster.
+
+\end{document}
